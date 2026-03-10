@@ -1,0 +1,21 @@
+name: scbenchmark
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - scanpy
+  - anndata
+  - matplotlib
+  - seaborn
+  - jupyter
+  - pip
+  - pip:
+      - scvi-tools
+      - gseapy
+      - torch
