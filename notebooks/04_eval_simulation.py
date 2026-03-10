@@ -1544,3 +1544,23 @@ rmse_ranking["rank"] = rmse_ranking.index + 1
 
 print("\n=== Tool Ranking (Cell-wise logRMSE, lower is better) ===")
 print(rmse_ranking.to_string(index=False))
+
+# ===================================================================
+# Export results to CSV for summary_visualization.py
+# ===================================================================
+sim_results = pd.DataFrame({
+    "tool": pcc_ranking["tool"],
+}).merge(
+    pcc_ranking[["tool", "overall_median_PCC"]].rename(columns={"overall_median_PCC": "cell_PCC"}), on="tool"
+).merge(
+    ranking[["tool", "mean_SCC"]].rename(columns={"mean_SCC": "Pseudobulk_AUPRC"}), on="tool"
+).merge(
+    auprc_ranking[["tool", "overall_median_AUPRC"]].rename(columns={"overall_median_AUPRC": "AUPRC (cell-level)"}), on="tool"
+).merge(
+    rmse_ranking[["tool", "overall_median_logRMSE"]].rename(columns={"overall_median_logRMSE": "logRMSE"}), on="tool"
+).merge(
+    overall_mean[["tool", "overall_mean_SCC"]].rename(columns={"overall_mean_SCC": "SCC_FC"}), on="tool"
+)
+
+sim_results.to_csv(os.path.join(SAVE_DIR, "../results/eval_simulation.csv"), index=False)
+print("\n✅ Saved: results/eval_simulation.csv")
