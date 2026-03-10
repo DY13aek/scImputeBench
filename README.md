@@ -132,7 +132,3 @@ If you use this benchmarking pipeline in your research, please cite:
   year={2025}
 }
 ```
-
-## License
-
-This project is released under the MIT License.
