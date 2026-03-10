@@ -58,16 +58,16 @@ This repository provides a reproducible pipeline for benchmarking **11 scRNA-seq
 ## Repository Structure
 
 ```
-scBenchmark/
+scImputeBench/
 ├── README.md
 ├── environment.yml              # Conda environment for the evaluation pipeline
 ├── notebooks/
-│   ├── 01_simulation_data_generation.ipynb
-│   ├── 02_zheng_preprocessing.ipynb
-│   ├── 03_imputation.ipynb
-│   ├── 04_eval_simulation.ipynb
-│   ├── 05_eval_chu.ipynb
-│   └── 06_eval_zheng.ipynb
+│   ├── 01_simulation_data_generation.py
+│   ├── 02_zheng_preprocessing.py
+│   ├── 03_imputation.py
+│   ├── 04_eval_simulation.py
+│   ├── 05_eval_chu.py
+│   └── 06_eval_zheng.py
 ├── scripts/
 │   └── summary_visualization.py
 ├── figures/
@@ -100,17 +100,17 @@ devtools::install_github("KlugerLab/ALRA")
 
 ## Usage
 
-Run the notebooks in order:
+Run the scripts in order:
 
-1. **`01_simulation_data_generation.ipynb`** — Generate simulated scRNA-seq data using Splatter
-2. **`02_zheng_preprocessing.ipynb`** — Download and preprocess the Zheng PBMC dataset
-3. **`03_imputation.ipynb`** — Run all 11 imputation methods on each dataset
-4. **`04_eval_simulation.ipynb`** — Evaluate imputation results on simulated data
-5. **`05_eval_chu.ipynb`** — Evaluate imputation results on the Chu dataset
-6. **`06_eval_zheng.ipynb`** — Evaluate imputation results on the Zheng dataset
+1. **`01_simulation_data_generation.py`** — Generate simulated scRNA-seq data using Splatter
+2. **`02_zheng_preprocessing.py`** — Download and preprocess the Zheng PBMC dataset
+3. **`03_imputation.py`** — Run all 11 imputation methods on each dataset
+4. **`04_eval_simulation.py`** — Evaluate imputation results on simulated data
+5. **`05_eval_chu.py`** — Evaluate imputation results on the Chu dataset
+6. **`06_eval_zheng.py`** — Evaluate imputation results on the Zheng dataset
 7. **`scripts/summary_visualization.py`** — Generate the summary benchmark visualization
 
-> **Note:** Each notebook defines a `BASE_DIR` variable at the top. Update this path to point to your local data directory before running.
+> **Note:** Each script defines a `BASE_DIR` variable at the top. Update this path to point to your local data directory before running.
 
 ## Results
 
