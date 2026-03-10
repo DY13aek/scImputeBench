@@ -25,8 +25,8 @@ This repository provides a reproducible pipeline for benchmarking **11 scRNA-seq
 ## Datasets
 
 - **Simulated data** — Generated using the Splatter R package with known ground truth
-- **Chu** — Human embryonic stem cell differentiation (Chu et al., 2016)
-- **Zheng** — PBMC 68k dataset (Zheng et al., 2017)
+- **Real-world data (Zheng)** — PBMC 68k dataset (Zheng et al., 2017)
+- **Bulk-paired data (Chu)** — Human embryonic stem cell differentiation with matched bulk RNA-seq (Chu et al., 2016)
 
 ## Evaluation Metrics (13 metrics across 3 categories)
 
@@ -66,8 +66,8 @@ scImputeBench/
 │   ├── 02_zheng_preprocessing.py
 │   ├── 03_imputation.py
 │   ├── 04_eval_simulation.py
-│   ├── 05_eval_chu.py
-│   └── 06_eval_zheng.py
+│   ├── 05_eval_realworld.py
+│   └── 06_eval_bulkpaired.py
 ├── scripts/
 │   └── summary_visualization.py
 ├── figures/
@@ -106,8 +106,8 @@ Run the scripts in order:
 2. **`02_zheng_preprocessing.py`** — Download and preprocess the Zheng PBMC dataset
 3. **`03_imputation.py`** — Run all 11 imputation methods on each dataset
 4. **`04_eval_simulation.py`** — Evaluate imputation results on simulated data
-5. **`05_eval_chu.py`** — Evaluate imputation results on the Chu dataset
-6. **`06_eval_zheng.py`** — Evaluate imputation results on the Zheng dataset
+5. **`05_eval_realworld.py`** — Evaluate imputation results on the real-world dataset (Zheng)
+6. **`06_eval_bulkpaired.py`** — Evaluate imputation results on the bulk-paired dataset (Chu)
 7. **`scripts/summary_visualization.py`** — Generate the summary benchmark visualization
 
 > **Note:** Each script defines a `BASE_DIR` variable at the top. Update this path to point to your local data directory before running.
