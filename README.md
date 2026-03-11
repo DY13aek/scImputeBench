@@ -22,11 +22,6 @@ This repository provides a reproducible pipeline for benchmarking **11 scRNA-seq
 | scSTD | Diffusion model |
 | scIDPMs | Diffusion model |
 
-## Datasets
-
-- **Simulated data** — Generated using the Splatter R package with known ground truth
-- **Real-world data (Zheng)** — PBMC 68k dataset (Zheng et al., 2017)
-- **Bulk-paired data (Chu)** — Human embryonic stem cell differentiation with matched bulk RNA-seq (Chu et al., 2016)
 
 ## Evaluation Metrics (13 metrics across 3 categories)
 
