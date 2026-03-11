@@ -4,7 +4,7 @@ A comprehensive benchmarking pipeline for single-cell RNA-seq imputation methods
 
 ## Overview
 
-This repository provides a reproducible pipeline for benchmarking **11 scRNA-seq imputation methods** across **3 datasets** using **13 evaluation metrics**. The pipeline covers the full workflow from data generation and preprocessing through imputation to multi-dimensional evaluation.
+This repository provides a reproducible pipeline for benchmarking **10 scRNA-seq imputation methods** using **13 evaluation metrics**. The pipeline covers the full workflow from data generation and preprocessing through imputation to multi-dimensional evaluation.
 
 ## Benchmarked Methods
 
@@ -58,7 +58,7 @@ scImputeBench/
 ├── environment.yml              # Conda environment for the evaluation pipeline
 ├── notebooks/
 │   ├── 01_simulation_data_generation.py
-│   ├── 02_zheng_preprocessing.py
+│   ├── 02_preprocessing.py
 │   ├── 03_imputation.py
 │   ├── 04_eval_simulation.py
 │   ├── 05_eval_realworld.py
@@ -98,7 +98,7 @@ devtools::install_github("KlugerLab/ALRA")
 Run the scripts in order:
 
 1. **`01_simulation_data_generation.py`** — Generate simulated scRNA-seq data using Splatter
-2. **`02_zheng_preprocessing.py`** — Download and preprocess the Zheng PBMC dataset
+2. **`02_preprocessing.py`** — Download and preprocess the Zheng PBMC dataset
 3. **`03_imputation.py`** — Run all 11 imputation methods on each dataset
 4. **`04_eval_simulation.py`** — Evaluate imputation results on simulated data
 5. **`05_eval_realworld.py`** — Evaluate imputation results on the real-world dataset (Zheng)
